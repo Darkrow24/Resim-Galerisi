@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resim Galerisi</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+		img{
+			max-width: 100%;
+		}
+		.gallery{
+			padding: 80px 0;
+		}
+		.gallery img{
+			background-color: #373737;
+			padding: 15px;
+			width: 100%;
+			box-shadow: 0 0 15px rgba(0,0,0,0.3);
+			cursor: pointer;
+		}
+		#gallery-modal .modal-img{
+			width: 100%;
+			}
+    </style>
+</head>
+<body>
+    <section class="gallery min-vh-100">
+		<div class="container-lg">
+		   <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
+			  <div class="col">
+				 <img src="Resim/Resim1.jpg" class="gallery-item" alt="gallery">
+			  </div>
+			  <div class="col">
+				 <img src="Resim/Resim2.jpg" class="gallery-item" alt="gallery">
+			  </div>
+			  <div class="col">
+				 <img src="Resim/Resim3.jpg" class="gallery-item" alt="gallery">
+			  </div>
+			  <div class="col">
+				 <img src="Resim/Resim4.jpg" class="gallery-item" alt="gallery">
+			  </div>
+			  <div class="col">
+				 <img src="Resim/Resim5.jpg" class="gallery-item" alt="gallery">
+			  </div>
+			  <div class="col">
+				 <img src="Resim/Resim6.jpg" class="gallery-item" alt="gallery">
+			  </div>
+			  <div class="col">
+				 <img src="Resim/Resim7.jpg" class="gallery-item" alt="gallery">
+			  </div>
+			  <div class="col">
+				 <img src="Resim/Resim8.jpg" class="gallery-item" alt="gallery">
+			  </div>
+			  <div class="col">
+				 <img src="Resim/Resim9.jpg" class="gallery-item" alt="gallery">
+			  </div>
+		   </div>
+		</div>
+	 </section>
+   
+   <div class="modal fade" id="gallery-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	 <div class="modal-dialog modal-dialog-centered modal-xl">
+	   <div class="modal-content">
+		 <div class="modal-header">
+		   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		 </div>
+		 <div class="modal-body">
+			<img src="Resim/Resim1.jpg" class="modal-img" alt="modal img">
+		 </div>
+	   </div>
+	 </div>
+   </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+		document.addEventListener("click",function (e){
+		if(e.target.classList.contains("gallery-item")){
+			const src = e.target.getAttribute("src");
+			document.querySelector(".modal-img").src = src;
+			const myModal = new bootstrap.Modal(document.getElementById('gallery-modal'));
+			myModal.show();
+		}
+		})
+    </script>
+</body>
+</html>
